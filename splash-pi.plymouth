@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Company name
+Description=description
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/splash-pi
+ScriptFile=/usr/share/plymouth/themes/splash-pi/splash-pi.script
