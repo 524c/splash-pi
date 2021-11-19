@@ -22,6 +22,7 @@ sed -i -E "s/__BOOT_MSG__/$BOOT_MSG/" splash-pi.script
 sudo mkdir -p /usr/share/plymouth/themes/splash-pi
 sudo cp -rf ~/splash-pi /usr/share/plymouth/themes/
 sudo ln -s /usr/share/plymouth/themes/splash-pi/splash-pi.plymouth /etc/alternatives/default.plymouth
+sudo ln -s /usr/share/plymouth/themes/splash-pi/splash-pi.plymouth /usr/share/plymouth/themes/default.plymouth
 ```
 
 ### enable splash screen in /boot/cmdline.txt (minimum required)
