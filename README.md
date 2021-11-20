@@ -19,7 +19,8 @@ sed -i -E "s/__BOOT_MSG__/$BOOT_MSG/" splash-pi.script
 
 ## on your rpi, run:
 ```
-sudo mkdir -p /usr/share/plymouth/themes/splash-pi
+sudo mkdir -p /usr/share/plymouth/themes
+[ -e ~/splash-pi/.git ] && rm -rf ~/splash-pi/.git
 sudo cp -rf ~/splash-pi /usr/share/plymouth/themes/
 sudo ln -s /usr/share/plymouth/themes/splash-pi/splash-pi.plymouth /etc/alternatives/default.plymouth
 sudo ln -s /usr/share/plymouth/themes/splash-pi/splash-pi.plymouth /usr/share/plymouth/themes/default.plymouth
