@@ -9,18 +9,23 @@ Raspberry splash screen template
 
 git clone https://github.com/524c/splash-pi
 cd splash-pi
-BOOT_MSG="V1.0 xxx 2021"
+BOOT_MSG="v1.0 xxx 2021"
 sed -i -E "s/__BOOT_MSG__/$BOOT_MSG/" splash-pi.script
 
 # replace the splash.png file with your custom image
-# copy the new theme 'splash-pi' to the rpi home folder
 ```
 
+```
+cd ..; tar zcf splash-pi.tgz splash-pi/splash*
+
+# copy the new theme splash-pi.tgz to the rpi home folder
+```
 
 ## on your rpi, run:
 ```
+cd ~
+tar xvf splash-pi.tgz
 sudo mkdir -p /usr/share/plymouth/themes
-[ -e ~/splash-pi/.git ] && rm -rf ~/splash-pi/.git
 sudo cp -rf ~/splash-pi /usr/share/plymouth/themes/
 sudo ln -s /usr/share/plymouth/themes/splash-pi/splash-pi.plymouth /etc/alternatives/default.plymouth
 sudo ln -s /usr/share/plymouth/themes/splash-pi/splash-pi.plymouth /usr/share/plymouth/themes/default.plymouth
